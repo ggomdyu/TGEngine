@@ -1,0 +1,16 @@
+{
+    "name": "tgengine",
+    "version-string": "0.0.1",
+    "description": "The C++17 based game engine",
+    "homepage": "https://github.com/ggomdyu/TGEngine",
+    "dependencies": [
+        "freetype",
+        "fmt",
+        "gainput",
+        "glew",
+        "gtest",
+        "icu",
+        "openal-soft",
+        "stb"
+    ]
+}

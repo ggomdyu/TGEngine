@@ -1,0 +1,35 @@
+include(CheckIncludeFile)
+include(CheckIncludeFiles)
+
+if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHsc")
+endif()
+
+set(TG_NAMESPACE_NAME "tg" CACHE STRING "")
+
+if(WIN32)
+    set(TG_PLATFORM "Windows" CACHE STRING "")
+    set(TG_GRAPHICS "OpenGL" CACHE STRING "")
+    set(TG_SUPPORT_POSIX FALSE)
+else()
+    if(APPLE)
+        set(TG_PLATFORM "MacOS" CACHE STRING "")
+        set(CMAKE_CXX_FLAGS "-fobjc-abi-version=2 -fobjc-arc")
+    elseif(LINUX)
+        set(TG_PLATFORM "Linux" CACHE STRING "")
+    elseif(UNIX)
+        set(TG_PLATFORM "Unix" CACHE STRING "")
+    else()
+        message(FATAL_ERROR "Unsupported platform.")
+    endif()
+
+    set(TG_GRAPHICS "OpenGL" CACHE STRING "")
+    set(TG_SUPPORT_POSIX TRUE)
+endif()
+
+set_property(CACHE TG_PLATFORM PROPERTY STRINGS "Windows" "MacOS")
+set_property(CACHE TG_GRAPHICS PROPERTY STRINGS "OpenGL" "D3D11")
+
+option(TG_ENABLE_NAMESPACE "" TRUE)
+option(TG_ENABLE_TEST "" TRUE)
+option(TG_ENABLE_INSTALL "" TRUE)

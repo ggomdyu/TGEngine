@@ -1,33 +1,18 @@
 ---
 Language: Cpp
-BasedOnStyle: LLVM
 AccessModifierOffset: -4
-AlignOperands: false
+AlignOperands: Align
 AlignTrailingComments: false
 AllowAllConstructorInitializersOnNextLine: false
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
 AllowShortFunctionsOnASingleLine: Empty
 AllowShortBlocksOnASingleLine: Empty
 AlwaysBreakTemplateDeclarations: Yes
-BraceWrapping: 
-    AfterCaseLabel: true
-    AfterClass: true
-    AfterControlStatement: true
-    AfterEnum: true
-    AfterFunction: true
-    AfterNamespace: true
-    AfterStruct: true
-    AfterUnion: true
-    AfterExternBlock: false
-    BeforeCatch: true
-    BeforeElse: true
-    SplitEmptyFunction: false
-    SplitEmptyRecord: false
-    SplitEmptyNamespace: false
-BreakBeforeBraces: Custom
+BreakBeforeBraces: Allman
 BreakConstructorInitializers: AfterColon
 BreakInheritanceList: AfterColon
-ColumnLimit: 0
-ConstructorInitializerAllOnOneLineOrOnePerLine: true
+Cpp11BracedListStyle: true
+ColumnLimit: 120
 FixNamespaceComments: false
 IncludeCategories: 
   - Regex: '^<.*'
@@ -38,6 +23,37 @@ IncludeCategories:
     Priority: 3
 IncludeIsMainRegex: '([-_](test|unittest))?$'
 IndentWidth: 4
-MaxEmptyLinesToKeep: 2
+IndentPPDirectives: AfterHash
+MaxEmptyLinesToKeep: 1
 NamespaceIndentation: None
 PointerAlignment: Left
+---
+Language: ObjC
+AccessModifierOffset: -4
+AlignOperands: Align
+AlignTrailingComments: false
+AllowAllConstructorInitializersOnNextLine: false
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortBlocksOnASingleLine: Empty
+AlwaysBreakTemplateDeclarations: Yes
+BreakBeforeBraces: Allman
+BreakConstructorInitializers: AfterColon
+BreakInheritanceList: AfterColon
+Cpp11BracedListStyle: true
+ColumnLimit: 120
+FixNamespaceComments: false
+IncludeCategories:
+  - Regex: '^<.*'
+    Priority: 1
+  - Regex: '^".*'
+    Priority: 2
+  - Regex: '.*'
+    Priority: 3
+IncludeIsMainRegex: '([-_](test|unittest))?$'
+IndentWidth: 4
+IndentPPDirectives: AfterHash
+MaxEmptyLinesToKeep: 1
+NamespaceIndentation: None
+PointerAlignment: Left
+---
